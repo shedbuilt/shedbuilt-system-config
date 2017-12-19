@@ -1,6 +1,6 @@
 #!/bin/bash
 # Network Config (Eth0, DHCP, systemd-resolved)
-install -v -Dm644 "${SHED_CONTRIBDIR}/systemd/network/10-eth0-dhcp.network" "${SHED_FAKEROOT}/etc/systemd/network"
+install -v -Dm644 "${SHED_CONTRIBDIR}/systemd/network/10-eth0-dhcp.network" "${SHED_FAKEROOT}/etc/systemd/network/10-eth0-dhcp.network"
 ln -sfv /run/systemd/resolve/resolv.conf "${SHED_FAKEROOT}/etc/resolv.conf"
 install -v -Dm644 "${SHED_CONTRIBDIR}/hostname" "${SHED_FAKEROOT}/etc"
 install -v -Dm644 "${SHED_CONTRIBDIR}/hosts" "${SHED_FAKEROOT}/etc"
