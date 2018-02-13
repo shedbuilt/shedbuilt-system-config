@@ -1,6 +1,22 @@
 #!/bin/bash
-# Set up swapfile
-dd if=/dev/zero of=/var/swap bs=1M count=512
-chmod 600 /var/swap
-# Temporarily disabled as this fails in chroot on systems where /var/swap is in use
-# mkswap /var/swap
+if [ ! -e /etc/hostname ]; then
+    install -v -m644 /etc/hostname.default /etc/hostname
+fi
+if [ ! -e /etc/hosts ]; then
+    install -v -m644 /etc/hosts.default /etc/hosts
+fi
+if [ ! -e /etc/locale.conf ]; then
+    install -v -m644 /etc/locale.conf.default /etc/locale.conf
+fi
+if [ ! -e /etc/inputrc ]; then
+    install -v -m644 /etc/inputrc.default /etc/inputrc
+fi
+if [ ! -e /etc/shells ]; then
+    install -v -m644 /etc/shells.default /etc/shells
+fi
+if [ ! -e /etc/fstab ]; then
+    install -v -m644 /etc/fstab.default /etc/fstab
+fi
+if [ ! -e /etc/sysctl.d/99-sysctl.conf.default ]; then
+    install -v -m644 /etc/sysctl.d/99-sysctl.conf.default /etc/sysctl.d/99-sysctl.conf
+fi
