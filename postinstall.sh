@@ -17,6 +17,6 @@ fi
 if [ ! -e /etc/fstab ]; then
     install -v -m644 /etc/fstab.default /etc/fstab
 fi
-if [ ! -e /etc/sysctl.d/99-sysctl.conf.default ]; then
+if [ ! -e /etc/sysctl.d/99-sysctl.conf ]; then
     install -v -m644 /etc/sysctl.d/99-sysctl.conf.default /etc/sysctl.d/99-sysctl.conf
 fi
