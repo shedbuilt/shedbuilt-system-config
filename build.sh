@@ -16,3 +16,5 @@ install -v -Dm644 "${SHED_CONTRIBDIR}/os-release" "${SHED_FAKEROOT}/etc"
 install -v -Dm644 "${SHED_CONTRIBDIR}/lsb-release" "${SHED_FAKEROOT}/etc"
 # Sysctl config
 install -v -Dm644 "${SHED_CONTRIBDIR}/sysctl.d/99-sysctl.conf" "${SHED_FAKEROOT}/etc/sysctl.d/99-sysctl.conf.default"
+# Issue
+install -v -Dm644 "${SHED_CONTRIBDIR}/issue" "${SHED_FAKEROOT}/etc/issue.default"
